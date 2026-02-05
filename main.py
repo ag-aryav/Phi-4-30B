@@ -12,7 +12,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 # 2. Double the layers
 original_config = model.config
 original_layers = original_config.num_hidden_layers
-new_layer_count = original_layers * 2  # Your smart move!
+new_layer_count = original_layers * 2
 print(f"Original layers: {original_layers}, New target: {new_layer_count}")
 
 # 3. Create expanded config
@@ -100,7 +100,3 @@ print(f"   - {original_layers} original layers (copied from phi-4)")
 print(f"   - {new_layer_count - original_layers} new layers (exact zero initialized)")
 print(f"   - Perfect identity function via residuals")
 print(f"   - Zero knowledge loss guaranteed!")
-print(f"\\nReady for training! Remember to:")
-print("   1. Freeze original layers")
-print("   2. Train only new layers with tiny LR (1e-6 to 1e-5)")
-print("   3. The model starts as exact copy of phi-4!")
